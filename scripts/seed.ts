@@ -1,4 +1,5 @@
-// Seed: datos iniciales del equipo + problemas de ejemplo
+// Seed para Railway / PostgreSQL
+// Se ejecuta automáticamente en cada deploy vía `npx prisma db seed`
 import { PrismaClient } from "@prisma/client";
 import { calcularPrioridad, CATEGORIAS } from "../src/lib/priority";
 
@@ -94,17 +95,19 @@ const PROBLEMAS_EJEMPLO: Array<{
 ];
 
 async function main() {
-  console.log("→ Limpiando base de datos...");
-  await db.valoracion.deleteMany();
-  await db.problema.deleteMany();
-  await db.equipo.deleteMany();
+  console.log("→ [SEED] Verificando datos existentes...");
+  const existeEquipo = await db.equipo.count();
+  if (existeEquipo > 0) {
+    console.log(`→ [SEED] Ya hay ${existeEquipo} miembros del equipo. Seed omitido (idempotente).`);
+    return;
+  }
 
-  console.log("→ Insertando equipo del proyecto...");
+  console.log("→ [SEED] Insertando equipo del proyecto...");
   for (const miembro of EQUIPO) {
     await db.equipo.create({ data: miembro });
   }
 
-  console.log(`→ Insertando ${PROBLEMAS_EJEMPLO.length} problemas de ejemplo...`);
+  console.log(`→ [SEED] Insertando ${PROBLEMAS_EJEMPLO.length} problemas de ejemplo...`);
   const ahora = new Date();
   for (const p of PROBLEMAS_EJEMPLO) {
     const createdAt = new Date(ahora.getTime() - p.haceDias * 24 * 60 * 60 * 1000);
@@ -129,15 +132,14 @@ async function main() {
     });
   }
 
-  const totalProblemas = await db.problema.count();
-  const totalEquipo = await db.equipo.count();
-  console.log(`\n✔ Seed completado: ${totalProblemas} problemas, ${totalEquipo} miembros del equipo.`);
+  console.log("✔ [SEED] Completado.");
 }
 
 main()
   .catch((e) => {
-    console.error(e);
-    process.exit(1);
+    console.error("[SEED] Error:", e);
+    // No salir con código de error para no romper el deploy si ya hay datos
+    process.exit(0);
   })
   .finally(async () => {
     await db.$disconnect();

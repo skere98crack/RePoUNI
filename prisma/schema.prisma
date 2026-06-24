@@ -1,12 +1,13 @@
 // Schema - Sistema de Registro de Problemas Universitarios
 // Proyecto: RePoUNI
+// Base de datos: PostgreSQL (Railway)
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -16,11 +17,11 @@ model Problema {
   descripcion   String
   categoria     String   // infraestructura | social | estudiantil | academico | seguridad | otros
   ubicacion     String?
-  codigoAlumno  String?  // código del estudiante que reporta (opcional)
-  severidad     Int      @default(5) // 1-10, valor inicial reportado por el alumno
+  codigoAlumno  String?
+  severidad     Int      @default(5)
   estado        String   @default("abierto") // abierto | en_progreso | resuelto
-  prioridad     Float    @default(0) // puntaje calculado por algoritmo
-  votos         Int      @default(1) // cantidad de estudiantes que reportan lo mismo
+  prioridad     Float    @default(0)
+  votos         Int      @default(1)
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
@@ -34,7 +35,7 @@ model Problema {
 model Valoracion {
   id           String   @id @default(cuid())
   problemaId   String
-  puntaje      Int      // 1-10
+  puntaje      Int
   comentario   String?
   sugerencia   String?
   createdAt    DateTime @default(now())
@@ -47,6 +48,6 @@ model Valoracion {
 model Equipo {
   id        String   @id @default(cuid())
   nombre    String
-  rol       String   // Diseño | Base de datos | Frontend | Clasificación | Backend
+  rol       String
   orden     Int      @default(0)
 }
