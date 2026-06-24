@@ -1,0 +1,52 @@
+// Schema - Sistema de Registro de Problemas Universitarios
+// Proyecto: RePoUNI
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Problema {
+  id            String   @id @default(cuid())
+  titulo        String
+  descripcion   String
+  categoria     String   // infraestructura | social | estudiantil | academico | seguridad | otros
+  ubicacion     String?
+  codigoAlumno  String?  // código del estudiante que reporta (opcional)
+  severidad     Int      @default(5) // 1-10, valor inicial reportado por el alumno
+  estado        String   @default("abierto") // abierto | en_progreso | resuelto
+  prioridad     Float    @default(0) // puntaje calculado por algoritmo
+  votos         Int      @default(1) // cantidad de estudiantes que reportan lo mismo
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  valoraciones  Valoracion[]
+
+  @@index([categoria])
+  @@index([prioridad])
+  @@index([estado])
+}
+
+model Valoracion {
+  id           String   @id @default(cuid())
+  problemaId   String
+  puntaje      Int      // 1-10
+  comentario   String?
+  sugerencia   String?
+  createdAt    DateTime @default(now())
+
+  problema     Problema @relation(fields: [problemaId], references: [id], onDelete: Cascade)
+
+  @@index([problemaId])
+}
+
+model Equipo {
+  id        String   @id @default(cuid())
+  nombre    String
+  rol       String   // Diseño | Base de datos | Frontend | Clasificación | Backend
+  orden     Int      @default(0)
+}
