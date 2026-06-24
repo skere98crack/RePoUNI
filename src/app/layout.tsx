@@ -14,17 +14,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RePoUNI · Sistema de Registro de Problemas Universitarios",
+  title: "RePoUNI · Sistema de Registro de Problemas - UNI / FIIS",
   description:
-    "Plataforma para que los estudiantes de la universidad reporten, clasifiquen y prioricen problemas de infraestructura, seguridad, ámbito social, estudiantil y académico. Algoritmo de prioridad basado en severidad, frecuencia y recencia.",
+    "Plataforma para que los estudiantes de la Facultad de Ingeniería Industrial y de Sistemas (FIIS) de la Universidad Nacional de Ingeniería (UNI) reporten, clasifiquen y prioricen problemas de infraestructura, seguridad, ámbito social, estudiantil y académico. Algoritmo de prioridad basado en severidad, frecuencia y recencia.",
   keywords: [
     "RePoUNI",
+    "UNI",
+    "FIIS",
+    "Universidad Nacional de Ingeniería",
+    "Facultad de Ingeniería Industrial y de Sistemas",
     "problemas universitarios",
     "registro de problemas",
     "estudiantes",
     "cachimbos",
     "priorización",
-    "universidad",
   ],
   authors: [
     { name: "Perez Diaz Michael Xavier" },
@@ -34,11 +37,11 @@ export const metadata: Metadata = {
     { name: "De la Cruz Crispín Jhon Gabriel" },
   ],
   openGraph: {
-    title: "RePoUNI · Sistema de Registro de Problemas Universitarios",
+    title: "RePoUNI · Sistema de Registro de Problemas - UNI / FIIS",
     description:
-      "Reporta, clasifica y prioriza problemas de la universidad. Apoya especialmente a los estudiantes nuevos (cachimbos).",
+      "Reporta, clasifica y prioriza problemas de la FIIS-UNI. Apoya especialmente a los estudiantes nuevos (cachimbos).",
     type: "website",
-    locale: "es_ES",
+    locale: "es_PE",
   },
 };
 

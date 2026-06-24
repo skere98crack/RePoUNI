@@ -108,7 +108,7 @@ export function RegistroForm({ onCreado }: { onCreado: () => void }) {
                   id="titulo"
                   value={titulo}
                   onChange={(e) => setTitulo(e.target.value)}
-                  placeholder="Ej: Laboratorio de cómputo sin internet"
+                  placeholder="Ej: Laboratorio de cómputo de Sistemas sin internet"
                   required
                   minLength={5}
                   maxLength={120}
@@ -122,7 +122,7 @@ export function RegistroForm({ onCreado }: { onCreado: () => void }) {
                   id="descripcion"
                   value={descripcion}
                   onChange={(e) => setDescripcion(e.target.value)}
-                  placeholder="Explica el problema, su impacto, desde cuándo ocurre y quiénes están afectados."
+                  placeholder="Explica el problema, su impacto en la FIIS, desde cuándo ocurre y quiénes están afectados (cachimbos, veteranos, docentes)."
                   required
                   minLength={15}
                   maxLength={1000}
@@ -154,7 +154,7 @@ export function RegistroForm({ onCreado }: { onCreado: () => void }) {
                     id="ubicacion"
                     value={ubicacion}
                     onChange={(e) => setUbicacion(e.target.value)}
-                    placeholder="Ej: Pabellón A - 2do piso"
+                    placeholder="Ej: FIIS - Pabellón de Industriales, 2do piso"
                     maxLength={120}
                   />
                 </div>
@@ -188,14 +188,14 @@ export function RegistroForm({ onCreado }: { onCreado: () => void }) {
                   id="codigo"
                   value={codigoAlumno}
                   onChange={(e) => setCodigoAlumno(e.target.value)}
-                  placeholder="Ej: 20230001A"
+                  placeholder="Ej: 20230123F (código UNI)"
                   maxLength={20}
                 />
               </div>
 
-              <div className="rounded-lg border border-blue-200 bg-blue-50 p-3 flex gap-3 text-sm">
-                <Info className="h-4 w-4 text-blue-600 flex-shrink-0 mt-0.5" />
-                <p className="text-blue-900">
+              <div className="rounded-lg border border-orange-200 bg-orange-50 p-3 flex gap-3 text-sm">
+                <Info className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-orange-900">
                   Al enviar, el sistema calculará el puntaje de prioridad combinando severidad, peso
                   de la categoría, votos y recencia. Si el problema ya existe, se sumará un voto en
                   lugar de duplicarlo.

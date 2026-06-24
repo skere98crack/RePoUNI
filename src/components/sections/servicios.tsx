@@ -9,16 +9,16 @@ export function Servicios() {
     <section id="servicios" className="py-20 bg-white border-y border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="inline-block rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600 mb-3">
-            Categorías de clasificación
+          <span className="inline-block rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-medium text-orange-700 mb-3">
+            Categorías de clasificación · FIIS
           </span>
           <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
             Tipos de problemas que atendemos
           </h2>
           <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
             Cada categoría tiene un peso institucional que influye en la prioridad final. Los
-            problemas de seguridad pesan más porque implican riesgo físico; los de integración social
-            pesan menos pero son clave para los cachimbos.
+            problemas de seguridad pesan más porque implican riesgo físico para los estudiantes de la FIIS;
+            los de integración social pesan menos pero son clave para los cachimbos que recién ingresan a la UNI.
           </p>
         </div>
 

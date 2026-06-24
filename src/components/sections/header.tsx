@@ -32,13 +32,13 @@ export function Header() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 text-white">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-white font-bold">
             <Building2 className="h-5 w-5" />
           </div>
           <div className="flex flex-col leading-tight">
             <span className="text-base font-bold tracking-tight text-slate-900">RePoUNI</span>
-            <span className="text-[10px] uppercase tracking-wider text-slate-500">
-              Registro de Problemas
+            <span className="text-[10px] uppercase tracking-wider text-primary font-semibold">
+              UNI · FIIS
             </span>
           </div>
         </a>

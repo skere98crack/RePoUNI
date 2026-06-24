@@ -11,19 +11,18 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-slate-900">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-white">
                 <Building2 className="h-5 w-5" />
               </div>
               <div className="flex flex-col leading-tight">
                 <span className="text-base font-bold text-white">RePoUNI</span>
-                <span className="text-[10px] uppercase tracking-wider text-slate-400">
-                  Registro de Problemas Universitarios
+                <span className="text-[10px] uppercase tracking-wider text-orange-300 font-semibold">
+                  UNI · FIIS
                 </span>
               </div>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Proyecto académico para identificar, organizar y priorizar los problemas que enfrentan
-              los estudiantes de la universidad, con foco en cachimbos.
+              Proyecto académico de la <strong className="text-slate-200">Facultad de Ingeniería Industrial y de Sistemas (FIIS)</strong> de la Universidad Nacional de Ingeniería (UNI). Identifica, organiza y prioriza los problemas que enfrentan los estudiantes, con foco en cachimbos.
             </p>
           </div>
 

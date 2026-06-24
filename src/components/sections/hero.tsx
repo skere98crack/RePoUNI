@@ -44,23 +44,21 @@ export function Hero({ stats }: { stats: Stats | null }) {
         className="absolute inset-0 -z-10 opacity-60"
         style={{
           backgroundImage:
-            "radial-gradient(60% 50% at 50% 0%, rgba(37,99,235,0.08) 0%, rgba(37,99,235,0) 60%)",
+            "radial-gradient(60% 50% at 50% 0%, rgba(245,130,32,0.12) 0%, rgba(245,130,32,0) 60%)",
         }}
       />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-20 lg:pt-24 lg:pb-28">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600 mb-6">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              Proyecto académico · Semana 13 / 15
+            <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-medium text-orange-700 mb-6">
+              <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+              Universidad Nacional de Ingeniería · FIIS
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.05]">
-              Sistema de registro de <span className="text-blue-600">problemas universitarios</span>
+              Sistema de registro de <span className="text-primary">problemas universitarios</span>
             </h1>
             <p className="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
-              Plataforma para que los estudiantes reporten, clasifiquen y prioricen problemas de la
-              universidad. Apoya especialmente a los cachimbos, quienes con mayor frecuencia enfrentan
-              inconvenientes que no saben cómo resolver por sí solos.
+              Plataforma para que los estudiantes de la <strong className="text-slate-900">Facultad de Ingeniería Industrial y de Sistemas (FIIS)</strong> de la UNI reporten, clasifiquen y prioricen problemas. Apoya especialmente a los cachimbos, quienes con mayor frecuencia enfrentan inconvenientes que no saben cómo resolver por sí solos.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg">
@@ -97,7 +95,7 @@ export function Hero({ stats }: { stats: Stats | null }) {
           {FEATURES.map((f) => (
             <Card key={f.title} className="border-slate-200 shadow-sm">
               <CardContent className="p-5">
-                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-primary">
                   <f.icon className="h-5 w-5" />
                 </div>
                 <h3 className="text-base font-semibold text-slate-900 mb-1">{f.title}</h3>
@@ -125,15 +123,15 @@ function StatCard({
   return (
     <Card
       className={`border shadow-sm ${
-        highlight ? "bg-slate-900 text-white border-slate-900" : "bg-white border-slate-200"
+        highlight ? "bg-primary text-white border-primary" : "bg-white border-slate-200"
       }`}
     >
       <CardContent className="p-5">
-        <p className={`text-xs uppercase tracking-wider ${highlight ? "text-slate-300" : "text-slate-500"}`}>
+        <p className={`text-xs uppercase tracking-wider ${highlight ? "text-orange-50" : "text-slate-500"}`}>
           {label}
         </p>
         <p className="mt-2 text-3xl font-bold">{value}</p>
-        <p className={`mt-1 text-xs ${highlight ? "text-slate-400" : "text-slate-500"}`}>{sub}</p>
+        <p className={`mt-1 text-xs ${highlight ? "text-orange-100" : "text-slate-500"}`}>{sub}</p>
       </CardContent>
     </Card>
   );

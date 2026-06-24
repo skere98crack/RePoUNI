@@ -36,14 +36,14 @@ export function Equipo() {
     <section id="equipo" className="py-20 bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="inline-block rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600 mb-3">
-            Equipo del proyecto
+          <span className="inline-block rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-medium text-orange-700 mb-3">
+            Equipo del proyecto · FIIS-UNI
           </span>
           <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
             Quiénes construyen RePoUNI
           </h2>
           <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
-            Cinco estudiantes con roles específicos distribuidos para cubrir todo el ciclo de vida
+            Cinco estudiantes de la Facultad de Ingeniería Industrial y de Sistemas (FIIS) de la UNI con roles específicos distribuidos para cubrir todo el ciclo de vida
             del sistema: diseño, base de datos, frontend, clasificación y backend.
           </p>
         </div>
