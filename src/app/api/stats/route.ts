@@ -12,6 +12,12 @@ export async function GET() {
   const totalValoraciones = await db.valoracion.count();
   const promedioPrioridad = await db.problema.aggregate({ _avg: { prioridad: true } });
 
+  // Calificaciones de la página
+  const totalCalificacionesPagina = await db.calificacionPagina.count();
+  const promedioCalificacionPagina = await db.calificacionPagina.aggregate({
+    _avg: { puntaje: true },
+  });
+
   // Distribución por categoría
   const porCategoriaRaw = await db.problema.groupBy({
     by: ["categoria"],
@@ -34,6 +40,9 @@ export async function GET() {
     totalVotos: totalVotos._sum.votos ?? 0,
     totalValoraciones,
     promedioPrioridad: Math.round((promedioPrioridad._avg.prioridad ?? 0) * 100) / 100,
+    totalCalificacionesPagina,
+    promedioCalificacionPagina:
+      Math.round((promedioCalificacionPagina._avg.puntaje ?? 0) * 100) / 100,
     porCategoria,
   });
 }

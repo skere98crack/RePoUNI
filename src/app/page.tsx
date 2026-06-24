@@ -8,6 +8,7 @@ import { Ranking } from "@/components/sections/ranking";
 import { Servicios } from "@/components/sections/servicios";
 import { Equipo } from "@/components/sections/equipo";
 import { Feedback } from "@/components/sections/feedback";
+import { PageFeedback } from "@/components/sections/page-feedback";
 import { Footer } from "@/components/sections/footer";
 
 type Stats = {
@@ -45,6 +46,7 @@ export default function Home() {
         <Servicios />
         <Equipo />
         <Feedback />
+        <PageFeedback />
       </main>
       <Footer />
     </div>

@@ -51,3 +51,11 @@ model Equipo {
   rol       String
   orden     Int      @default(0)
 }
+
+model CalificacionPagina {
+  id           String   @id @default(cuid())
+  puntaje      Int      // 1-10
+  comentario   String?
+  codigoAlumno String?  // opcional - anónimo si es null
+  createdAt    DateTime @default(now())
+}

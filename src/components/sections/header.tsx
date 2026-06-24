@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: "#servicios", label: "Categorías" },
   { href: "#equipo", label: "Equipo" },
   { href: "#feedback", label: "Valorar" },
+  { href: "#calificar-pagina", label: "Calificar página" },
 ];
 
 export function Header() {
@@ -32,13 +33,21 @@ export function Header() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-3">
-          {/* Logo oficial UNI */}
-          <img
-            src="/uni-logo.png"
-            alt="Logo Universidad Nacional de Ingeniería"
-            className="h-10 w-auto"
-            width={40}
-            height={22}
+          {/* Logo oficial UNI en color rojo (vía CSS mask) */}
+          <div
+            aria-label="Logo Universidad Nacional de Ingeniería"
+            role="img"
+            className="h-11 w-[88px] bg-primary flex-shrink-0"
+            style={{
+              maskImage: "url(/uni-logo.png)",
+              maskSize: "contain",
+              maskRepeat: "no-repeat",
+              maskPosition: "center",
+              WebkitMaskImage: "url(/uni-logo.png)",
+              WebkitMaskSize: "contain",
+              WebkitMaskRepeat: "no-repeat",
+              WebkitMaskPosition: "center",
+            }}
           />
           <div className="h-8 w-px bg-border" />
           <div className="flex flex-col leading-tight">

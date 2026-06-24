@@ -30,7 +30,8 @@ const PROBLEMAS_EJEMPLO: Array<{
 }> = [];
 
 async function main() {
-  console.log("→ [SEED] Limpiando base de datos (problemas + valoraciones)...");
+  console.log("→ [SEED] Limpiando base de datos (problemas + valoraciones + calificaciones página)...");
+  await db.calificacionPagina.deleteMany();
   await db.valoracion.deleteMany();
   await db.problema.deleteMany();
 

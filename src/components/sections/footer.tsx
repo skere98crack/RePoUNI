@@ -11,13 +11,21 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              {/* Logo oficial UNI (versión blanca del footer) */}
-              <img
-                src="/uni-logo.png"
-                alt="Logo Universidad Nacional de Ingeniería"
-                className="h-12 w-auto bg-white/95 rounded px-1.5 py-0.5"
-                width={48}
-                height={26}
+              {/* Logo oficial UNI en color rojo (vía CSS mask) */}
+              <div
+                aria-label="Logo Universidad Nacional de Ingeniería"
+                role="img"
+                className="h-14 w-[112px] bg-primary flex-shrink-0"
+                style={{
+                  maskImage: "url(/uni-logo.png)",
+                  maskSize: "contain",
+                  maskRepeat: "no-repeat",
+                  maskPosition: "center",
+                  WebkitMaskImage: "url(/uni-logo.png)",
+                  WebkitMaskSize: "contain",
+                  WebkitMaskRepeat: "no-repeat",
+                  WebkitMaskPosition: "center",
+                }}
               />
               <div className="flex flex-col leading-tight">
                 <span className="text-base font-bold text-white">RePoUNI</span>
