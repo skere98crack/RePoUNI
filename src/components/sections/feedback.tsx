@@ -74,10 +74,10 @@ export function Feedback() {
   };
 
   return (
-    <section id="feedback" className="py-20 bg-white border-y border-slate-200">
+    <section id="feedback" className="py-20 bg-card border-y border-border">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <span className="inline-block rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600 mb-3">
+          <span className="inline-block rounded-full border border-red-200 bg-red-50 px-3 py-1 text-xs font-medium text-red-800 mb-3">
             Criterio de éxito
           </span>
           <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">

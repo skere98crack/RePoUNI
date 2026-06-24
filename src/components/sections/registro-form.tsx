@@ -79,7 +79,7 @@ export function RegistroForm({ onCreado }: { onCreado: () => void }) {
   };
 
   return (
-    <section id="registro" className="py-20 bg-white border-y border-slate-200">
+    <section id="registro" className="py-20 bg-card border-y border-border">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <Badge variant="secondary" className="mb-3">Paso 1</Badge>
@@ -193,9 +193,9 @@ export function RegistroForm({ onCreado }: { onCreado: () => void }) {
                 />
               </div>
 
-              <div className="rounded-lg border border-orange-200 bg-orange-50 p-3 flex gap-3 text-sm">
+              <div className="rounded-lg border border-red-200 bg-red-50 p-3 flex gap-3 text-sm">
                 <Info className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                <p className="text-orange-900">
+                <p className="text-red-900">
                   Al enviar, el sistema calculará el puntaje de prioridad combinando severidad, peso
                   de la categoría, votos y recencia. Si el problema ya existe, se sumará un voto en
                   lugar de duplicarlo.

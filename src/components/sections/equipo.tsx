@@ -33,16 +33,16 @@ export function Equipo() {
   }, []);
 
   return (
-    <section id="equipo" className="py-20 bg-slate-50">
+    <section id="equipo" className="py-20 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="inline-block rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-medium text-orange-700 mb-3">
+          <span className="inline-block rounded-full border border-red-200 bg-red-50 px-3 py-1 text-xs font-medium text-red-800 mb-3">
             Equipo del proyecto · FIIS-UNI
           </span>
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
             Quiénes construyen RePoUNI
           </h2>
-          <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
+          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
             Cinco estudiantes de la Facultad de Ingeniería Industrial y de Sistemas (FIIS) de la UNI con roles específicos distribuidos para cubrir todo el ciclo de vida
             del sistema: diseño, base de datos, frontend, clasificación y backend.
           </p>

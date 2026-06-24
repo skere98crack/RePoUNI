@@ -39,18 +39,18 @@ const FEATURES = [
 
 export function Hero({ stats }: { stats: Stats | null }) {
   return (
-    <section id="top" className="relative overflow-hidden bg-slate-50">
+    <section id="top" className="relative overflow-hidden bg-background">
       <div
         className="absolute inset-0 -z-10 opacity-60"
         style={{
           backgroundImage:
-            "radial-gradient(60% 50% at 50% 0%, rgba(245,130,32,0.12) 0%, rgba(245,130,32,0) 60%)",
+            "radial-gradient(60% 50% at 50% 0%, rgba(139,26,26,0.10) 0%, rgba(139,26,26,0) 60%)",
         }}
       />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-20 lg:pt-24 lg:pb-28">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-medium text-orange-700 mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3 py-1 text-xs font-medium text-red-800 mb-6">
               <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
               Universidad Nacional de Ingeniería · FIIS
             </div>
@@ -93,13 +93,13 @@ export function Hero({ stats }: { stats: Stats | null }) {
 
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {FEATURES.map((f) => (
-            <Card key={f.title} className="border-slate-200 shadow-sm">
+            <Card key={f.title} className="border-border shadow-sm">
               <CardContent className="p-5">
-                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-primary">
+                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-red-50 text-primary">
                   <f.icon className="h-5 w-5" />
                 </div>
-                <h3 className="text-base font-semibold text-slate-900 mb-1">{f.title}</h3>
-                <p className="text-sm text-slate-600 leading-relaxed">{f.desc}</p>
+                <h3 className="text-base font-semibold text-foreground mb-1">{f.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
               </CardContent>
             </Card>
           ))}
@@ -123,15 +123,15 @@ function StatCard({
   return (
     <Card
       className={`border shadow-sm ${
-        highlight ? "bg-primary text-white border-primary" : "bg-white border-slate-200"
+        highlight ? "bg-primary text-white border-primary" : "bg-card border-border"
       }`}
     >
       <CardContent className="p-5">
-        <p className={`text-xs uppercase tracking-wider ${highlight ? "text-orange-50" : "text-slate-500"}`}>
+        <p className={`text-xs uppercase tracking-wider ${highlight ? "text-red-50" : "text-muted-foreground"}`}>
           {label}
         </p>
         <p className="mt-2 text-3xl font-bold">{value}</p>
-        <p className={`mt-1 text-xs ${highlight ? "text-orange-100" : "text-slate-500"}`}>{sub}</p>
+        <p className={`mt-1 text-xs ${highlight ? "text-red-100" : "text-muted-foreground"}`}>{sub}</p>
       </CardContent>
     </Card>
   );

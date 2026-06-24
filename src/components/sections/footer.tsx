@@ -1,6 +1,6 @@
 "use client";
 
-import { Building2, Github, Mail, CalendarDays } from "lucide-react";
+import { Github, CalendarDays } from "lucide-react";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -10,13 +10,18 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-white">
-                <Building2 className="h-5 w-5" />
-              </div>
+            <div className="flex items-center gap-3 mb-4">
+              {/* Logo oficial UNI (versión blanca del footer) */}
+              <img
+                src="/uni-logo.png"
+                alt="Logo Universidad Nacional de Ingeniería"
+                className="h-12 w-auto bg-white/95 rounded px-1.5 py-0.5"
+                width={48}
+                height={26}
+              />
               <div className="flex flex-col leading-tight">
                 <span className="text-base font-bold text-white">RePoUNI</span>
-                <span className="text-[10px] uppercase tracking-wider text-orange-300 font-semibold">
+                <span className="text-[10px] uppercase tracking-wider text-red-300 font-semibold">
                   UNI · FIIS
                 </span>
               </div>

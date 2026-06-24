@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Building2, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
   { href: "#registro", label: "Registrar problema" },
@@ -26,17 +26,23 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 w-full border-b transition-colors ${
         scrolled
-          ? "bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-slate-200"
-          : "bg-white border-transparent"
+          ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-border"
+          : "bg-background border-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#top" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-white font-bold">
-            <Building2 className="h-5 w-5" />
-          </div>
+        <a href="#top" className="flex items-center gap-3">
+          {/* Logo oficial UNI */}
+          <img
+            src="/uni-logo.png"
+            alt="Logo Universidad Nacional de Ingeniería"
+            className="h-10 w-auto"
+            width={40}
+            height={22}
+          />
+          <div className="h-8 w-px bg-border" />
           <div className="flex flex-col leading-tight">
-            <span className="text-base font-bold tracking-tight text-slate-900">RePoUNI</span>
+            <span className="text-base font-bold tracking-tight text-foreground">RePoUNI</span>
             <span className="text-[10px] uppercase tracking-wider text-primary font-semibold">
               UNI · FIIS
             </span>
@@ -62,7 +68,7 @@ export function Header() {
         </div>
 
         <button
-          className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700"
+          className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-foreground"
           onClick={() => setOpen((v) => !v)}
           aria-label="Abrir menú"
         >
@@ -71,14 +77,14 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-slate-200 bg-white">
+        <div className="md:hidden border-t border-border bg-background">
           <nav className="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-1">
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-md"
+                className="px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md"
               >
                 {l.label}
               </a>

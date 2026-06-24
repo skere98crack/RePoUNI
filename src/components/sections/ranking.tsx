@@ -77,7 +77,7 @@ export function Ranking() {
   }, [cargar]);
 
   return (
-    <section id="ranking" className="py-20 bg-slate-50">
+    <section id="ranking" className="py-20 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
           <div>
