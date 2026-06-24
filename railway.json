@@ -7,11 +7,15 @@
       "npx prisma generate",
       "npx prisma migrate deploy",
       "npm run build"
-    ]
+    ],
+    "nixpacksVersion": "v1.29.0"
   },
   "deploy": {
     "startCommand": "npx prisma db seed && npm start",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
+  },
+  "environment": {
+    "NIXPACKS_NODE_VERSION": "20"
   }
 }
